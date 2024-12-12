@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bat Ball Game</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        .buttons_game{
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bat Ball Stump Game</h1>
+    <hr>
+    <div class="buttons_game">
+        <button onclick="console.log('You have Clicked BAT');
+
+        let randomNumber = Math.random () * 3;
+        if(randomNumber > 0 && randomNumber<=1) 
+        {
+            let computerChoice='Bat';
+            console.log('Computer choice is bat');
+        }
+        
+        else if (randomNumber > 1 && randomNumber <=2)
+        {
+        let computerChoice = 'Ball';
+        console.log('Computer choice is ball');
+    }
+    else
+    {
+        let computerChoice = 'Wicket'
+        console.log('Computer choice is Wicket');
+    }
+
+    if (computerChoice==='Ball'){
+        console.log('User Won');
+    }
+    
+    ">Bat</button>
+        <button>Ball</button>
+        <button>Stump</button>
+    </div>
+</body>
+</html>
