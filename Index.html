@@ -46,16 +46,14 @@
 
     alert(`You have Clicked BAT. Computer choice is ${computerChoice} and ${resultMsg}`);">Bat</button>
 
-<!-- ----------------------------------------------------------------------------------- -->
         <button onclick="
 
         randomNumber = Math.random () * 3;
-        computerChoice;
-
-
+        let computerChoice;
+        
         if(randomNumber > 0 && randomNumber<=1) 
         {
-            computerChoice='Bat';
+            computerChoice= 'Bat';
         }
         else if (randomNumber > 1 && randomNumber <=2)
         {
@@ -64,31 +62,27 @@
         computerChoice = 'Wicket'
     }
 
-
-    resultMsg;
-    if (computerChoice==='Ball'){
+    let resultMsg;
+    if (computerChoice === 'Ball'){
         resultMsg= `It's a Tie`;
-    } else if(computerChoice==='Bat') {
+    } else if(computerChoice === 'Bat') {
         resultMsg= 'Computer has won';
-    } else if(computerChoice==='Wicket') {
+    } else if(computerChoice ==='Wicket') {
         resultMsg='User has won';
     }
 
-    alert(`You have Clicked BALL. Computer choice is ${computerChoice} and ${resultMsg}`);"
+    alert(`You have Clicked Ball. Computer choice is ${computerChoice} and ${resultMsg}`);"
         
         >Ball</button>
 
-<!-- ----------------------------------------------------------------------------------------- -->
-        <button 
-        onclick="
+        <button onclick="
 
         randomNumber = Math.random () * 3;
-        computerChoice;
-
-
+        let computerChoice;
+        
         if(randomNumber > 0 && randomNumber<=1) 
         {
-            computerChoice='Bat';
+            computerChoice= 'Bat';
         }
         else if (randomNumber > 1 && randomNumber <=2)
         {
@@ -97,18 +91,16 @@
         computerChoice = 'Wicket'
     }
 
-
-    resultMsg;
-    if (computerChoice==='Ball'){
-        resultMsg= `It's a Tie`;
-    } else if(computerChoice==='Bat') {
+    let resultMsg;
+    if (computerChoice === 'Ball'){
+        resultMsg= 'User has won.';
+    } else if(computerChoice === 'Bat') {
         resultMsg= 'Computer has won';
-    } else if(computerChoice==='Wicket') {
-        resultMsg='User has won';
+    } else if(computerChoice ==='Wicket') {
+        resultMsg=`It's a Tie.`;
     }
 
-    alert(`You have Clicked BALL. Computer choice is ${computerChoice} and ${resultMsg}`);"
-    >Stump</button>
+    alert(`You have Clicked Wicket. Computer choice is ${computerChoice} and ${resultMsg}`);">Wicket</button>
     </div>
 </body>
 </html>
