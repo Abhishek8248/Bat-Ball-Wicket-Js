@@ -13,27 +13,13 @@
         }
     </style>
 </head>
+<!-- --------------------------------------------------------------------------------- -->
 <body>
     <h1>Bat Ball Stump Game</h1>
     <hr>
     <div class="buttons_game">
         <button onclick="
-
-        let randomNumber = Math.random () * 3;
-        let computerChoice;
-
-
-        if(randomNumber > 0 && randomNumber<=1) 
-        {
-            computerChoice='Bat';
-        }
-        else if (randomNumber > 1 && randomNumber <=2)
-        {
-        computerChoice = 'Ball';
-    }else{
-        computerChoice = 'Wicket'
-    }
-
+        generateComputerChoice();
 
     let resultMsg;
     if (computerChoice==='Ball'){
@@ -45,24 +31,11 @@
     }
 
     alert(`You have Clicked BAT. Computer choice is ${computerChoice} and ${resultMsg}`);">Bat</button>
-
+<!-- -------------------------------------------------------------------------------- -->
         <button onclick="
 
-        randomNumber = Math.random () * 3;
-        let computerChoice;
-        
-        if(randomNumber > 0 && randomNumber<=1) 
-        {
-            computerChoice= 'Bat';
-        }
-        else if (randomNumber > 1 && randomNumber <=2)
-        {
-        computerChoice = 'Ball';
-    }else{
-        computerChoice = 'Wicket'
-    }
+        generateComputerChoice();
 
-    let resultMsg;
     if (computerChoice === 'Ball'){
         resultMsg= `It's a Tie`;
     } else if(computerChoice === 'Bat') {
@@ -74,24 +47,10 @@
     alert(`You have Clicked Ball. Computer choice is ${computerChoice} and ${resultMsg}`);"
         
         >Ball</button>
-
+<!-- --------------------------------------------------------------------------------------------------- -->
         <button onclick="
-
-        randomNumber = Math.random () * 3;
-        let computerChoice;
+        generateComputerChoice();
         
-        if(randomNumber > 0 && randomNumber<=1) 
-        {
-            computerChoice= 'Bat';
-        }
-        else if (randomNumber > 1 && randomNumber <=2)
-        {
-        computerChoice = 'Ball';
-    }else{
-        computerChoice = 'Wicket'
-    }
-
-    let resultMsg;
     if (computerChoice === 'Ball'){
         resultMsg= 'User has won.';
     } else if(computerChoice === 'Bat') {
@@ -102,5 +61,22 @@
 
     alert(`You have Clicked Wicket. Computer choice is ${computerChoice} and ${resultMsg}`);">Wicket</button>
     </div>
+<!-- ----------------------------------------------------------------------------- -->
+ <script>
+     let computerChoice;
+     function generateComputerChoice(){
+        let randomNumber = Math.random () * 3;
+        if(randomNumber > 0 && randomNumber<=1) 
+        {
+            computerChoice='Bat';
+        }
+        else if (randomNumber > 1 && randomNumber <=2)
+        {
+        computerChoice = 'Ball';
+    }else{
+        computerChoice = 'Wicket'
+    }
+     }
+ </script>
 </body>
 </html>
