@@ -13,70 +13,82 @@
         }
     </style>
 </head>
-<!-- --------------------------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------------------------->
 <body>
     <h1>Bat Ball Stump Game</h1>
     <hr>
     <div class="buttons_game">
         <button onclick="
-        generateComputerChoice();
-
-    let resultMsg;
-    if (computerChoice==='Ball'){
-        resultMsg='User Won';
-    } else if(computerChoice==='Bat') {
-        resultMsg= `It's a Tie`;
-    } else if(computerChoice==='Wicket') {
-        resultMsg='Computer has won';
-    }
-
-    alert(`You have Clicked BAT. Computer choice is ${computerChoice} and ${resultMsg}`);">Bat</button>
-<!-- -------------------------------------------------------------------------------- -->
+       let computerChoice = generateComputerChoice();
+       let resultMsg = getResult('Bat', computerChoice);
+       showResult('Bat', computerChoice, resultMsg);
+">Bat</button>
+<!-- ---------------------------------------------------------------------------------->
         <button onclick="
 
-        generateComputerChoice();
-
-    if (computerChoice === 'Ball'){
-        resultMsg= `It's a Tie`;
-    } else if(computerChoice === 'Bat') {
-        resultMsg= 'Computer has won';
-    } else if(computerChoice ==='Wicket') {
-        resultMsg='User has won';
-    }
-
-    alert(`You have Clicked Ball. Computer choice is ${computerChoice} and ${resultMsg}`);"
-        
-        >Ball</button>
-<!-- --------------------------------------------------------------------------------------------------- -->
+    computerChoice = generateComputerChoice();
+    resultMsg = getResult('Bat', computerChoice);
+    showResult('Ball', computerChoice, resultMsg);
+    ">Ball</button>
+<!-- ----------------------------------------------------------------------------------------------------->
         <button onclick="
-        generateComputerChoice();
-        
-    if (computerChoice === 'Ball'){
-        resultMsg= 'User has won.';
-    } else if(computerChoice === 'Bat') {
-        resultMsg= 'Computer has won';
-    } else if(computerChoice ==='Wicket') {
-        resultMsg=`It's a Tie.`;
-    }
-
-    alert(`You have Clicked Wicket. Computer choice is ${computerChoice} and ${resultMsg}`);">Wicket</button>
+        computerChoice = generateComputerChoice();
+        resultMsg = getResult('Bat', computerChoice);
+        showResult('Wicket', computerChoice, resultMsg);
+        ">Wicket</button>
     </div>
 <!-- ----------------------------------------------------------------------------- -->
  <script>
-     let computerChoice;
      function generateComputerChoice(){
         let randomNumber = Math.random () * 3;
+
         if(randomNumber > 0 && randomNumber<=1) 
         {
-            computerChoice='Bat';
+            return 'Bat';
         }
         else if (randomNumber > 1 && randomNumber <=2)
         {
-        computerChoice = 'Ball';
+        return 'Ball';
     }else{
-        computerChoice = 'Wicket'
+        return 'Wicket'
     }
      }
+// -------------function-2------------------------------
+     function getResult(userMove, computerMove){
+        if(userMove === 'Bat'){
+            if (computerMove==='Ball'){
+            return 'User Won';
+        } else if(computerMove==='Bat') {
+        return `It's a Tie`;
+        } else if(computerMove==='Wicket') {
+        return 'Computer has won';
+        }
+    }
+        else if(userMove === 'Ball'){
+            if (computerMove === 'Ball'){
+                return  `It's a Tie`;
+         } else if(computerMove === 'Bat') {
+        return 'Computer has won';
+         } else if(computerMove==='Wicket') {
+        return 'User has won';
+        }
+    }
+        else{
+            if (computerMove=== 'Ball'){
+                return  'User has won.';
+        } else if(computerMove === 'Bat') {
+            return  'Computer has won';
+        } else if(computerMove ==='Wicket') {
+        return `It's a Tie.`;
+        }
+    }
+     }
+// ---------------Function-3------------------------------
+
+function showResult(userMove, computerMove, result) {
+    alert(`You have Clicked ${userMove}. Computer choice is ${computerMove} and ${result}`);
+
+}
  </script>
 </body>
 </html>
