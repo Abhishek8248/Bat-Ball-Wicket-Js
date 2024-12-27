@@ -27,18 +27,24 @@
         <button onclick="
 
     computerChoice = generateComputerChoice();
-    resultMsg = getResult('Bat', computerChoice);
+    resultMsg = getResult('Ball', computerChoice);
     showResult('Ball', computerChoice, resultMsg);
     ">Ball</button>
 <!-- ----------------------------------------------------------------------------------------------------->
         <button onclick="
         computerChoice = generateComputerChoice();
-        resultMsg = getResult('Bat', computerChoice);
+        resultMsg = getResult('Wicket', computerChoice);
         showResult('Wicket', computerChoice, resultMsg);
         ">Wicket</button>
     </div>
 <!-- ----------------------------------------------------------------------------- -->
  <script>
+    let score = {
+        win:0,
+        lost:0,
+        tie:0,
+    }; 
+
      function generateComputerChoice(){
         let randomNumber = Math.random () * 3;
 
@@ -57,28 +63,37 @@
      function getResult(userMove, computerMove){
         if(userMove === 'Bat'){
             if (computerMove==='Ball'){
+                score.win++;
             return 'User Won';
         } else if(computerMove==='Bat') {
+            score.tie++;
         return `It's a Tie`;
         } else if(computerMove==='Wicket') {
+            score.lost++;
         return 'Computer has won';
         }
     }
         else if(userMove === 'Ball'){
             if (computerMove === 'Ball'){
+                score.tie++;
                 return  `It's a Tie`;
          } else if(computerMove === 'Bat') {
+            score.lost++;
         return 'Computer has won';
          } else if(computerMove==='Wicket') {
+            score.win++;
         return 'User has won';
         }
     }
         else{
             if (computerMove=== 'Ball'){
+                score.win++;
                 return  'User has won.';
         } else if(computerMove === 'Bat') {
+            score.lost++;
             return  'Computer has won';
         } else if(computerMove ==='Wicket') {
+            score.tie++;
         return `It's a Tie.`;
         }
     }
@@ -86,7 +101,10 @@
 // ---------------Function-3------------------------------
 
 function showResult(userMove, computerMove, result) {
-    alert(`You have Clicked ${userMove}. Computer choice is ${computerMove} and ${result}`);
+    alert(`You have Clicked ${userMove}. Computer choice is ${computerMove} 
+    ${result}
+    
+    Won:${score.win}, Lost:${score.lost}, Tie:${score.tie}`);
 
 }
  </script>
